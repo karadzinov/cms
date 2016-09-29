@@ -39,7 +39,7 @@
                                     <div class="separator-2 clearfix"></div>
                                     <p>{!!  $slide->description !!}</p>
                                     <div class="text-right"><a class="btn btn-small btn-gray-transparent margin-clear"
-                                                               href="page-services.html">Повеќе</a></div>
+                                                               href="{{ $slide->link }}">Повеќе</a></div>
                                 </div>
 
                             </li>
