@@ -23,6 +23,7 @@
                 </span>
                 @endif
             </div>
+
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} loginbox-textbox">
                 <label class="col-md-4 control-label">Password</label>
                 <input type="password" class="form-control" placeholder="Password" name="password" />
