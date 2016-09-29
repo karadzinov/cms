@@ -248,15 +248,18 @@ class ReferralController extends Controller
     public function destroy($id)
     {
         $referral = Referral::FindOrFail($id);
+        if($referral->image)
+        {
+            // Delete images
+            $image = public_path() . '/assets/img/referrals/' . $referral->image;
+            $imagemedium = public_path() . '/assets/img/referrals/medium/' . $referral->image;
+            $imagethumb = public_path() . '/assets/img/referrals/thumbnails/' . $referral->image;
 
-        // Delete blog images
-        $image = public_path() . '/assets/img/referrals/' . $referral->image;
-        $imagemedium = public_path() . '/assets/img/referrals/medium/' . $referral->image;
-        $imagethumb = public_path() . '/assets/img/referrals/thumbnails/' . $referral->image;
+            unlink($image);
+            unlink($imagemedium);
+            unlink($imagethumb);
+        }
 
-        unlink($image);
-        unlink($imagemedium);
-        unlink($imagethumb);
 
         $referral->delete();
         return redirect('/admin/referrals');

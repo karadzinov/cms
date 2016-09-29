@@ -225,9 +225,9 @@
 <!-- Morphext -->
 <script type="text/javascript" src="/assets/plugins/morphext/morphext.min.js"></script>
 <!-- Google Maps javascript -->
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;signed_in=true"></script>
-<script type="text/javascript" src="/assets/js/google.map.config.js"></script>
+<!-- Google Maps -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAsNNbnqvbIiRo2hBpr3-lvmYxm3ISPtWI"></script>
+
 
 <!-- Background Video -->
 <script src="/assets/plugins/vide/jquery.vide.js"></script>
@@ -242,6 +242,6 @@
 <script type="text/javascript" src="/assets/js/template.js"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript" src="/assets/js/custom.js"></script>
-
+@yield('scripts')
 </body>
 </html>

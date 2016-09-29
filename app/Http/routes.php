@@ -41,6 +41,7 @@ Route::group(['middleware' => ['web', 'role:admin'], 'prefix' => 'admin'], funct
 
 Route::get('/', 'HomePageController@index');
 Route::get('/{slug}', 'HomePageController@staticpages');
+Route::get('/referents/{slug}', 'HomePageController@referents');
 Route::get('/services/{slug}', 'HomePageController@services');
 Route::get('/product/{slug}', 'HomePageController@product');
 Route::get('/categories/{slug}', 'HomePageController@categories');
