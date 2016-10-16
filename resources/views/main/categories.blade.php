@@ -23,7 +23,6 @@
             <div class="row">
 
 
-
             @if($category->image)
                 <!-- banner start -->
                     <!-- ================ -->
@@ -41,10 +40,13 @@
                                         <ul class="slides">
                                             <!-- slide 1 start -->
                                             <!-- ================ -->
-                                            <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="500" data-saveperformance="on" data-title="Slide 1">
+                                            <li data-transition="slidehorizontal" data-slotamount="1"
+                                                data-masterspeed="500" data-saveperformance="on" data-title="Slide 1">
 
                                                 <!-- main image -->
-                                                <img src="/assets/img/categories/{{$category->image}}" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
+                                                <img src="/assets/img/categories/{{$category->image}}" alt="slidebg1"
+                                                     data-bgposition="center top" data-bgrepeat="no-repeat"
+                                                     data-bgfit="cover">
 
                                                 <!-- Transparent Background -->
                                                 <div class="tp-caption dark-translucent-bg"
@@ -69,7 +71,8 @@
                                                      data-y="155"
                                                      data-speed="500"
                                                      data-start="1300"
-                                                     data-easing="easeOutQuad"><div class="separator light"></div>
+                                                     data-easing="easeOutQuad">
+                                                    <div class="separator light"></div>
                                                 </div>
 
                                                 <!-- LAYER NR. 3 -->
@@ -85,6 +88,53 @@
                                             </li>
                                             <!-- slide 1 end -->
 
+                                            @foreach($sliders as $slider)
+                                                <!-- slide 1 start -->
+                                                    <!-- ================ -->
+                                                    <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="500" data-saveperformance="on" data-title="Slide 1">
+
+                                                        <!-- main image -->
+                                                        <img src="/assets/img/sliders/{{$slider->image}}" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
+
+                                                        <!-- Transparent Background -->
+                                                        <div class="tp-caption dark-translucent-bg"
+                                                             data-x="center"
+                                                             data-y="bottom"
+                                                             data-speed="600"
+                                                             data-start="0">
+                                                        </div>
+
+                                                        <!-- LAYER NR. 1 -->
+                                                        <div class="tp-caption sfb fadeout text-center large_white"
+                                                             data-x="center"
+                                                             data-y="110"
+                                                             data-speed="500"
+                                                             data-start="1000"
+                                                             data-easing="easeOutQuad">{{ $category->name }}
+                                                        </div>
+
+                                                        <!-- LAYER NR. 2 -->
+                                                        <div class="tp-caption sfb fadeout text-center large_white tp-resizeme"
+                                                             data-x="center"
+                                                             data-y="155"
+                                                             data-speed="500"
+                                                             data-start="1300"
+                                                             data-easing="easeOutQuad"><div class="separator light"></div>
+                                                        </div>
+
+                                                        <!-- LAYER NR. 3 -->
+                                                        <div class="tp-caption sfb fadeout medium_white text-center"
+                                                             data-x="center"
+                                                             data-y="190"
+                                                             data-speed="500"
+                                                             data-start="1300"
+                                                             data-easing="easeOutQuad"
+                                                             data-endspeed="600">
+                                                        </div>
+
+                                                    </li>
+                                                    <!-- slide 1 end -->
+                                            @endforeach
 
                                         </ul>
                                         <div class="tp-bannertimer"></div>
@@ -109,7 +159,7 @@
                     <h1 class="page-title">{{ $category->name }}</h1>
                     <div class="separator-2"></div>
                 {!! $category->description !!}
-                    <!-- page-title end -->
+                <!-- page-title end -->
 
                 @foreach($category->getImmediateDescendants() as $descendant)
                     <!-- masonry grid item start -->
@@ -186,7 +236,8 @@
 
                             <div class="col-md-12 block clearfix">
 
-                                <a href="/assets/files/categories/{{ $category->file }}" alt="{{ $category->filename }}" target="_blank">{{ $category->filename }}</a>
+                                <a href="/assets/files/categories/{{ $category->file }}" alt="{{ $category->filename }}"
+                                   target="_blank">{{ $category->filename }}</a>
 
                             </div>
                         </div>

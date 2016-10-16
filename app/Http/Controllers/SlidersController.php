@@ -50,6 +50,7 @@ class SlidersController extends Controller
         $input = $request->all();
 
 
+
         if ($request->hasFile('image')) {
 
             $image = $request->file('image');

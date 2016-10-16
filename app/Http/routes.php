@@ -26,6 +26,12 @@ Route::group(['middleware' => ['web', 'role:admin'], 'prefix' => 'admin'], funct
 	Route::post('/users/{id}/delete', 'DashboardController@delete');
 	Route::post('/users/register', 'DashboardController@register');
     Route::post('/settings/store','HomeController@store')->name('admin.settings.store');
+
+
+    Route::get('/sliders/{id}/category','CategoriesController@addslider')->name('admin.addcategoryslider.view');
+    Route::post('/addcategorystore','CategoriesController@sliderstore')->name('admin.slidercategory.store');
+    Route::post('/addcategorydestroy','CategoriesController@sliderdestroy')->name('admin.slidercategory.destroy');
+
     Route::get('/settings/{id}/edit','HomeController@edit')->name('admin.settings.edit');
     Route::post('/settings/update','HomeController@update')->name('admin.settings.update');
     Route::get('/sliders/{id}/product','SlidersController@index')->name('admin.sliders.index');

@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
-@section('scripts')
-
-@endsection
-
-
 @section('content')
 
     <div class="page-body">
         <div class="row">
             <div class="col-lg-12">
+                <legend>Промена на категорија: {{  $category->name }}</legend>
 
-
+                <div class="row">
+                    <div class="col-lg-12">
+                            <a href="/admin/sliders/{{ $category->id }}/category" class="btn btn-info"><i class="fa fa-plus"></i>Додади слајдер</a>
+                    </div>
+                </div>
+                <div style="margin-bottom: 50px"></div>
                 {{ Form::model($categories, array('route' => array('admin.categories.update', $category->id), 'method' => 'PUT','files' => true)) }}
 
 
@@ -32,7 +33,7 @@
                 <br/>
 
 
-                <legend>Промена на категорија: {{  $category->name }}</legend>
+
                 <div class="form-group">
                     <label for="name">Наслов на категорија</label>
                     <input type="text" class="form-control" id="categoryname" name="name"
@@ -83,6 +84,9 @@
                 {!! Form::close() !!}
             </div>
         </div>
+
+
+
     </div>
 
 

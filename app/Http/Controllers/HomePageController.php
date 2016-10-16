@@ -123,11 +123,12 @@ class HomePageController extends Controller
             $products = Product::where('category','=',$category->id)->get();
         }
 
+        $sliders = Sliders::where('category_id','=',$category->id)->get();
         $allcategories = Category::get();
         $categories = Category::roots()->get();
         $tree = Category::getTreeHP($categories);
         $staticpages = StaticPage::all();
-        $data = ["category" => $category, "products" => $products, "services" => $services,"staticpages" => $staticpages,"settings" => $settings,"tree" => $tree,"categories" => $categories,"allcategories" => $allcategories];
+        $data = ["category" => $category, "sliders" => $sliders, "products" => $products, "services" => $services,"staticpages" => $staticpages,"settings" => $settings,"tree" => $tree,"categories" => $categories,"allcategories" => $allcategories];
         return view('main.categories')->with($data);
     }
 
