@@ -2,8 +2,6 @@ $(document).ready(function()
 {
 // Google Maps
 
-
-
 map = new google.maps.Map(document.getElementById('map-canvas'), {
 	center: {lat: 48.85, lng: 2.35},
 	zoom: 5

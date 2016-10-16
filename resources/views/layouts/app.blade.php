@@ -10,24 +10,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
 
-
     <!--Basic Styles-->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet"/>
-<!--    <link id="bootstrap-rtl-link" href="" rel="stylesheet"/> -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet"/>
     <link href="/assets/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="/assets/css/weather-icons.min.css" rel="stylesheet"/>
 
     <!--Fonts-->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
+          rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <!--Beyond styles-->
     <link id="beyond-link" href="/assets/css/beyond.min.css" rel="stylesheet" type="text/css"/>
-<!--    <link href="/assets/css/demo.min.css" rel="stylesheet"/> -->
+    <link href="/assets/css/demo.min.css" rel="stylesheet"/>
     <link href="/assets/css/skins/orange.min.css" rel="stylesheet" />
     <link href="/assets/css/typicons.min.css" rel="stylesheet"/>
     <link href="/assets/css/animate.min.css" rel="stylesheet"/>
     <link href="/assets/css/custom.css" rel="stylesheet"/>
-<!--    <link id="skin-link" href="/assets/css/skins/orange.css" rel="application/javascript" type="text/css"/> -->
+    <link id="skin-link" href="/assets/css/skins/orange.css" rel="application/javascript" type="text/css"/>
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="/assets/js/skins.min.js"></script>
@@ -264,24 +264,24 @@
             <!-- /Page Header -->
 
             @yield('content')
-
         </div>
         <!--Basic Scripts-->
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
-        <script src="/assets/js/slimscroll/jquery.slimscroll.min.js"></script> 
+        <script src="/assets/js/slimscroll/jquery.slimscroll.min.js"></script>
 
 
         <script type="text/javascript" src="/assets/js/ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="/assets/js/ckconf.js"></script>
         <!--Beyond Scripts-->
-        <script src="/assets/js/beyond.js"></script> 
+        <script src="/assets/js/beyond.js"></script>
 
         <script src="/assets/js/bootbox/bootbox.js"></script>
 
         @yield('scripts')
-	<!-- Custom Scripts -->
+    <!-- Custom Scripts -->
         <script src="/assets/js/custom.js"></script>
 
 </body>
 </html>
+

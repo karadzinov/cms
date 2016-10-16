@@ -338,14 +338,14 @@
 
     @section('scripts')
         <!-- Google Maps -->
-            <script type="text/javascript"  src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAsNNbnqvbIiRo2hBpr3-lvmYxm3ISPtWI"></script>
+            <script type="text/javascript"
+                    src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAsNNbnqvbIiRo2hBpr3-lvmYxm3ISPtWI"></script>
 
             <script>
                 @foreach($settings as $setting)
 
                         $(document).ready(function () {
 // Google Maps
-
 
                     map = new google.maps.Map(document.getElementById('map-canvas'), {
                         center: {lat: {{ $setting->lat }}, lng: {{ $setting->lng }} },
