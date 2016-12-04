@@ -173,13 +173,13 @@ p.large {
   margin-bottom: 30px;
 }
 a {
-  color: #09afdf;
+  color: #b01e2d;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 a:hover {
-  color: #0c9ec7;
+  color: #b01e2d;
 }
 a:focus,
 a:active {

@@ -44,6 +44,8 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
+
+
         $errors = Validator::make($request->all(), [
             'name' => 'required|max:255',
         ]);
@@ -104,9 +106,9 @@ class CategoriesController extends Controller
 
 
         if ($input['parent_id'] == "null") {
-            $root = Category::create(['name' => $input['name'], 'slug' => $input['slug'], 'image' => $input['image'], 'decription' => $input['description']]);
+            $root = Category::create(['name' => $input['name'], 'slug' => $input['slug']]);
         } else {
-            $child = Category::create(['name' => $input['name'], 'slug' => $input['slug'], 'image' => $input['image'], 'decription' => $input['description']]);
+            $child = Category::create(['name' => $input['name'], 'slug' => $input['slug']]);
             $child->makeChildOf($input['parent_id']);
         }
 

@@ -3,7 +3,7 @@
 <!-- Head -->
 <head>
     <meta charset="utf-8"/>
-    <title>Olimpik CMS</title>
+    <title>FrutiSmoothie CMS</title>
     <meta name="description" content="Dashboard"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -176,6 +176,13 @@
                     <a href="/admin/categories" class="menu">
                         <i class="menu-icon fa fa-list-ol"></i>
                         <span class="menu-text"> Категории </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/blog" class="menu">
+                        <i class="menu-icon fa fa-forumbee"></i>
+                        <span class="menu-text"> Блог </span>
+
                     </a>
                 </li>
                 <li>

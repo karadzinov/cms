@@ -1,87 +1,83 @@
-@extends('layouts.main')
+@extends('layouts.single')
 @include('layouts.menu')
+
+@section('opengraph')
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Fruti Smoothie - {!! $product->title !!}">
+    <meta itemprop="description" content="{!! str_limit(strip_tags($product->description), 155) !!}">
+    <meta itemprop="image" content="http://frutismoothie.mk/assets/img/products/{{ $product->image }}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@FrutiSmoothie">
+    <meta name="twitter:title" content="Fruti Smoothie">
+    <meta name="twitter:description" content="{!!  str_limit(strip_tags($product->description), 155) !!}">
+    <meta name="twitter:creator" content="@AccSuccess">
+    <meta name="twitter:image" content="http://frutismoothie.mk/assets/img/logo/thumbnails/{{ $settings->logo }}">
+
+    <!-- Open Graph data -->
+    <meta property="fb:app_id" content="332475717131384" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Fruti Smoothie" />
+    <meta property="og:url" content="{!! $path !!}" /> 
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://frutismoothie.mk/assets/img/products/{{ $product->image }}" />
+    <meta property="og:description" content="{!! str_limit(strip_tags($product->description), 155) !!}" />
+    <meta property="og:site_name" content="Fruti Smoothie - {!! $product->title !!}" />
+@endsection
+
 @section('content')
-
-    <!-- breadcrumb start -->
-    <!-- ================ -->
-    <div class="breadcrumb-container">
+    <!-- blog -->
+    <div class="blog">
+        <!-- container -->
         <div class="container">
-            <ol class="breadcrumb">
-                <li><i class="fa fa-home pr-10"></i><a href="/">Почетна</a></li>
-                <li class="active">{{ $product->title }}</li>
-
-            </ol>
+            <div class="col-md-8 blog-top-left-grid">
+                <div class="left-blog left-single">
+                    <div class="blog-left">
+                        <div class="single-left-left wow fadeInUp animated" data-wow-delay=".5s">
+                            <p> Почетна / <a href="#">{{ $product->title }}</a></p>
+                            <img src="/assets/img/products/{{ $product->image }}" alt="{{ $product->title }}"/>
+                        </div>
+			<div class="blog-left-bottom wow fadeInUp animated" data-wow-delay=".5s" style="min-height: 20px;">
+				<span class='st_facebook_large' displayText='Facebook'></span>
+				<span class='st_twitter_large' displayText='Tweet'></span>
+				<span class='st_linkedin_large' displayText='LinkedIn'></span>
+				<span class='st_pinterest_large' displayText='Pinterest'></span>
+				<span class='st_email_large' displayText='Email'></span>
+			</div>
+                        <div class="blog-left-bottom wow fadeInUp animated" data-wow-delay=".5s">
+                            {!! $product->description !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 blog-top-right-grid">
+                <div class="Categories">
+                    <h3 class="wow fadeInUp animated" data-wow-delay=".5s">Категории</h3>
+                    <ul>
+                        @foreach($categories as $category)
+                            <li class="wow fadeInUp animated" data-wow-delay=".5s"><a
+                                        href="/categories/{{ $category->slug }}/products">{{ $category->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="clearfix padding-help-1"></div>
+                <div class="Categories">
+                    <div class="fb-page" data-href="https://www.facebook.com/frutismoothie.mk/" data-tabs="timeline"
+                         data-width="350" data-small-header="false" data-adapt-container-width="true"
+                         data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/frutismoothie.mk/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/frutismoothie.mk/">Fruti Smoothie</a></blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
+        <!-- //container -->
     </div>
-    <!-- breadcrumb end -->
+    <!-- //blog -->
 
-
-
-    <!-- main-container start -->
-    <!-- ================ -->
-    <section class="main-container padding-ver-clear">
-        <div class="container pv-40">
-            <div class="row">
-                <div class="col-md-8 block clearfix">
-                    <div class="owl-carousel content-slider-with-controls">
-
-                        <div class="overlay-container overlay-visible">
-                            <img src="/assets/img/products/{{ $product->image }}"/>
-
-                            <a href="/assets/img/products/{{ $product->image }}"
-                               class="popup-img overlay-link"><i class="icon-plus-1"></i></a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-
-                <!-- main start -->
-                <!-- ================ -->
-                <div class="main col-md-8">
-
-
-                    <h1 class="title">{{ $product->title }}</h1>
-                    <div class="separator-2"></div>
-                    {!! $product->description !!}
-                </div>
-
-                <!-- main end -->
-
-                <!-- sidebar start -->
-                <!-- ================ -->
-                <aside class="col-md-4 col-lg-3 col-lg-offset-1">
-                    <div class="sidebar">
-
-
-                        <div class="col-md-12 block clearfix">
-                            <div class="owl-carousel content-slider-with-controls">
-                                @foreach($sliders as $slider)
-                                    <div class="overlay-container overlay-visible">
-                                        <img src="/assets/img/sliders/medium/{{ $slider->image }}"/>
-                                        <div class="overlay-bottom hidden-xs">
-                                            <div class="text">
-                                                <h3 class="title"></h3>
-                                            </div>
-                                        </div>
-                                        <a href="/assets/img/sliders/{{ $slider->image }}"
-                                           class="popup-img overlay-link"><i class="icon-plus-1"></i></a>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-
-
-                    </div>
-                </aside>
-                <!-- sidebar end -->
-
-            </div>
-        </div>
-    </section>
-    <!-- main-container end -->
-
+    @include('main.footer')
 
 @endsection
 

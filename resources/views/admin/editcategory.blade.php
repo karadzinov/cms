@@ -9,7 +9,8 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                            <a href="/admin/sliders/{{ $category->id }}/category" class="btn btn-info"><i class="fa fa-plus"></i>Додади слајдер</a>
+                        <a href="/admin/sliders/{{ $category->id }}/category" class="btn btn-info"><i
+                                    class="fa fa-plus"></i>Додади слајдер</a>
                     </div>
                 </div>
                 <div style="margin-bottom: 50px"></div>
@@ -24,15 +25,12 @@
                 </div>
                 <br/>
 
-
                 <div class="img-blog">
                     @if(!!$category->file)
                         <a href="/assets/files/categories/{{ $category->file }}"/>{{ $category->file }}</a>
                     @endif
                 </div>
                 <br/>
-
-
 
                 <div class="form-group">
                     <label for="name">Наслов на категорија</label>
@@ -83,9 +81,22 @@
                 <button type="submit" class="btn btn-default">Обнови категорија</button>
                 {!! Form::close() !!}
             </div>
+
+
         </div>
 
+        <div style="margin-bottom: 12px;"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                {{ Form::model('category', array('route' => array('admin.categories.destroy', $category->id), 'method' => 'DELETE', 'id' => $category->id))}}
+                {!! csrf_field() !!}
 
+                <button type="submit" class="btn btn-labeled shiny btn-danger delete"><i
+                            class="btn-label fa fa-trash"></i> Delete
+                </button>
+                {{ Form::close() }}
+            </div>
+        </div>
 
     </div>
 

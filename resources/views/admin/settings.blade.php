@@ -189,7 +189,6 @@
 
 @section('scripts')
     <!-- Google Maps -->
-    <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAsNNbnqvbIiRo2hBpr3-lvmYxm3ISPtWI"></script>
-    <script type="text/javascript" src="/assets/js/maps.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyA75bnzyJ_5j2Ger9Erjo1Q-0XucnZbst4"></script>
+  <script type="text/javascript" src="/assets/js/maps.js"></script>
 @endsection

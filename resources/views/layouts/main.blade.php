@@ -1,247 +1,211 @@
 <!DOCTYPE html>
-<!--[if IE 9]>
-<html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>{{$settings->title}}</title>
-    <meta name="description" content="{!! str_limit(strip_tags($settings->description), 100, '...')!!}">
-    <meta name="author" content="Martin Karadzinov">
+    <title>Fruti Smoothie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="sokovi, сокови, природно цедени сокови, овошни сокови, 100% природни"/>
+
+    <meta name="author" content="Fruti Smoothie">
 
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <!-- Web Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic'
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Fruti Smoothie">
+    <meta itemprop="description" content="{!!  str_limit(strip_tags($settings->description), 155) !!}">
+    <meta itemprop="image" content="http://frutismoothie.mk/assets/img/logo/thumbnails/{{ $settings->logo }}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@FrutiSmoothie">
+    <meta name="twitter:title" content="Fruti Smoothie">
+    <meta name="twitter:description" content="{!!  str_limit(strip_tags($settings->description), 155) !!}">
+    <meta name="twitter:creator" content="@AccSuccess">
+    <meta name="twitter:image" content="http://frutismoothie.mk/assets/img/logo/thumbnails/{{ $settings->logo }}">
+
+    <!-- Open Graph data -->
+    <meta property="fb:app_id" content="1349715901726862" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Fruti Smoothie" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://frutismoothie.mk/" />
+    <meta property="og:image" content="http://frutismoothie.mk/assets/img/logo/thumbnails/{{ $settings->logo }}" />
+    <meta property="og:description" content="{!!  str_limit(strip_tags($settings->description), 155) !!}" />
+    <meta property="og:site_name" content="Fruti Smoothie" />
+
+    <script type="application/x-javascript"> addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
+    <!-- bootstrap-css -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <!--// bootstrap-css -->
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>
+    <!--// css -->
+
+    <!-- font -->
+    <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet'
+          type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
           rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Font Awesome CSS -->
-    <link href="/assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <!-- Fontello CSS -->
-    <link href="/assets/fonts/fontello/css/fontello.css" rel="stylesheet">
-
-    <!-- Plugins -->
-    <link href="/assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
-    <link href="/assets/plugins/rs-plugin/css/settings.css" rel="stylesheet">
-    <link href="/assets/css/animations.css" rel="stylesheet">
-    <link href="/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="/assets/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-    <link href="/assets/plugins/hover/hover-min.css" rel="stylesheet">
-    <link href="/assets/plugins/morphext/morphext.css" rel="stylesheet">
-
-
-    <!-- The Project core CSS file -->
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
-    <link href="/assets/css/skins/lightblue.css" rel="stylesheet">
-
-
-    <!-- Custom css -->
-    <link href="/assets/css/custom.css" rel="stylesheet">
+    <!-- //font -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!--animate-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//end-animate-->
+    <link href="css/component.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
 </head>
+<body class="cbp-spmenu-push">
+<div class="header-section">
+    <!-- banner -->
+    <div class="banner">
+        <div class="container">
+            <div class="header">
+                <div class="top-nav">
+                    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s2">
+                        @include('main.menu')
+                    </nav>
+                    <div class="main buttonset">
+                        <!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
+                        <button id="showRightPush"><img src="images/menu.png" alt=""/></button>
+                        <!--<span class="menu"></span>-->
+                    </div>
+                <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+                    <script src="js/classie.js"></script>
+                    <script>
+                        var menuRight = document.getElementById('cbp-spmenu-s2'),
+                                showRightPush = document.getElementById('showRightPush'),
+                                body = document.body;
 
-<!-- body classes:  -->
-<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
-<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
-<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
-<!-- "gradient-background-header": applies gradient background to header -->
-<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
-<body class="no-trans front-page   page-loader-5">
+                        showRightPush.onclick = function () {
+                            classie.toggle(this, 'active');
+                            classie.toggle(body, 'cbp-spmenu-push-toleft');
+                            classie.toggle(menuRight, 'cbp-spmenu-open');
+                            disableOther('showRightPush');
+                        };
 
-<!-- scrollToTop -->
-<!-- ================ -->
-<div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+                        function disableOther(button) {
+                            if (button !== 'showRightPush') {
+                                classie.toggle(showRightPush, 'disabled');
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="logo wow fadeInDown animated" data-wow-delay=".5s">
+                    <h1><a href="/"><img src="/assets/img/logo/thumbnails/{{ $settings->logo }}"></a></h1>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- banner-info -->
+            <div class="banner-info">
+                <div class="col-md-5 banner-info-left wow fadeInLeft animated" data-wow-delay=".5s">
+                    <img src="images/1.png" alt=""/>
+                </div>
+                <div class="col-md-7 banner-info-right">
+                    <div class="banner-info-right-top wow fadeInRight animated" data-wow-delay=".5s">
+                        <h4>Fruti Smoothie</h4>
+                    </div>
+                    <script src="js/responsiveslides.min.js"></script>
+                    <script>
+                        // You can also use "$(window).load(function() {"
+                        $(function () {
+                            // Slideshow 4
+                            $("#slider3").responsiveSlides({
+                                auto: true,
+                                pager: false,
+                                nav: true,
+                                speed: 500,
+                                namespace: "callbacks",
+                                before: function () {
+                                    $('.events').append("<li>before event fired.</li>");
+                                },
+                                after: function () {
+                                    $('.events').append("<li>after event fired.</li>");
+                                }
+                            });
+                        });
+                    </script>
+<script>
 
-<!-- page wrapper start -->
-<!-- ================ -->
-<div class="page-wrapper">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 
-   @yield('menu')
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 
-    @yield('slider')
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
-    <div id="page-start"></div>
+  })(window,document,'script','http://frutismoothie.mk/js/analytics.js','ga');
+
+
+
+  ga('create', 'UA-88310108-1', 'auto');
+
+  ga('send', 'pageview');
+
+
+
+</script>
+                    <div id="top" class="callbacks_container-wrap">
+                        <ul class="rslides" id="slider3">
+                            @foreach($sliders as $slider)
+                            <li>
+                                <div class="banner-info-right-info wow fadeInRight animated" data-wow-delay=".5s">
+                                    <h3>{{ $slider->title }}</h3>
+
+                                    <p>{!! str_limit($slider->description, 250) !!}</p>
+                                </div>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="icons wow fadeInUp animated" data-wow-delay=".5s">
+                        <ul>
+                            @if($settings->twitter)
+                                <li><a href="{{ $settings->twitter }}" class="twitter"></a></li>
+                            @endif
+                            @if($settings->facebook)
+                                <li><a href="{{ $settings->facebook }}" class="twitter facebook"></a></li>
+                            @endif
+                            @if($settings->gplus)
+                                <li><a href="{{ $settings->gplus }}" class="twitter chrome"></a></li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- //banner-info -->
+        </div>
+    </div>
+    <!-- //banner -->
 
 @yield('content')
-
-    <!-- footer start (Add "dark" class to #footer in order to enable dark footer) -->
-    <!-- ================ -->
-    <footer id="footer" class="clearfix dark">
-
-        <!-- .footer start -->
-        <!-- ================ -->
-        <div class="footer">
-            <div class="container">
-                <div class="footer-inner">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="footer-content">
-                                <div class="logo-footer"><img id="logo-footer"
-                                                              src="/assets/img/logo/thumbnails/{{ $settings->logo }}"
-                                                              alt=""></div>
-                                <p>{!!$settings->description!!}</p>
-                                <ul class="list-inline mb-20">
-                                    <li><i class="text-default fa fa-map-marker pr-5"></i> {{ $settings->address }}</li>
-                                    <li><i class="text-default fa fa-phone pl-10 pr-5"></i> {{ $settings->phone }}</li>
-                                    <li><a href="mailto:{{$settings->email}}" class="link-dark"><i
-                                                    class="text-default fa fa-envelope-o pl-10 pr-5"></i>
-                                            {{$settings->email}}</a></li>
-                                </ul>
-                                <div class="separator-2"></div>
-                                <ul class="social-links circle margin-clear animated-effect-1">
-                                    @if($settings->twitter)
-                                        <li class="twitter"><a target="_blank" href="{{ $settings->twitter }}"><i
-                                                        class="fa fa-twitter"></i></a></li>
-                                    @endif
-                                    @if($settings->skype)
-                                        <li class="skype"><a target="_blank" href="{{ $settings->skype }}"><i
-                                                        class="fa fa-skype"></i></a></li>
-                                    @endif
-                                    @if($settings->linkedin)
-                                        <li class="linkedin"><a target="_blank" href="{{ $settings->linkedin }}"><i
-                                                        class="fa fa-linkedin"></i></a></li>
-                                    @endif
-                                    @if($settings->gplus)
-                                        <li class="googleplus"><a target="_blank" href="{{$settings->gplus}}"><i
-                                                        class="fa fa-google-plus"></i></a></li>
-                                    @endif
-                                    @if($settings->youtube)
-                                        <li class="youtube"><a target="_blank" href="{{$settings->youtube}}"><i
-                                                        class="fa fa-youtube-play"></i></a></li>
-                                    @endif
-                                    @if($settings->flickr)
-                                        <li class="flickr"><a target="_blank" href="{{ $settings->flickr }}"><i
-                                                        class="fa fa-flickr"></i></a></li>
-                                    @endif
-                                    @if($settings->facebook)
-                                        <li class="facebook"><a target="_blank" href="{{ $settings->facebook }}"><i
-                                                        class="fa fa-facebook"></i></a></li>
-                                    @endif
-                                    @if($settings->pinterest)
-                                        <li class="pinterest"><a target="_blank" href="{{$settings->pinterest}}"><i
-                                                        class="fa fa-pinterest"></i></a></li>
-                                    @endif
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="footer-content">
-                                <h2 class="title">Контактирајте не</h2>
-                                <div class="alert alert-success hidden" id="MessageSent2">
-                                    We have received your message, we will contact you very soon.
-                                </div>
-                                <div class="alert alert-danger hidden" id="MessageNotSent2">
-                                    Oops! Something went wrong please refresh the page and try again.
-                                </div>
-                                <form role="form" id="footer-form" class="margin-clear">
-                                    <div class="form-group has-feedback mb-10">
-                                        <label class="sr-only" for="name2">Име</label>
-                                        <input type="text" class="form-control" id="name2" placeholder="Име"
-                                               name="name2">
-                                        <i class="fa fa-user form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback mb-10">
-                                        <label class="sr-only" for="email2">Email address</label>
-                                        <input type="email" class="form-control" id="email2" placeholder="Внесете email"
-                                               name="email2">
-                                        <i class="fa fa-envelope form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback mb-10">
-                                        <label class="sr-only" for="message2">Порака</label>
-                                        <textarea class="form-control" rows="4" id="message2" placeholder="Порака"
-                                                  name="message2"></textarea>
-                                        <i class="fa fa-pencil form-control-feedback"></i>
-                                    </div>
-                                    <input type="submit" value="Испрати"
-                                           class="margin-clear submit-button btn btn-default">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- .footer end -->
-
-        <!-- .subfooter start -->
-        <!-- ================ -->
-        <div class="subfooter">
-            <div class="container">
-                <div class="subfooter-inner">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p class="text-center">Copyright © 2016 <a target="_blank"
-                                                                       href="{{$settings->mainurl}}">{{$settings->title}}</a>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- .subfooter end -->
-
-    </footer>
-    <!-- footer end -->
-
-
-</div>
-<!-- page-wrapper end -->
-
-<!-- JavaScript files placed at the end of the document so the pages load faster -->
-<!-- ================================================== -->
-<!-- Jquery and Bootstap core js files -->
-<script type="text/javascript" src="/assets/plugins/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
-<!-- Modernizr javascript -->
-<script type="text/javascript" src="/assets/plugins/modernizr.js"></script>
-<!-- jQuery Revolution Slider  -->
-<script type="text/javascript" src="/assets/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="/assets/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<!-- Isotope javascript -->
-<script type="text/javascript" src="/assets/plugins/isotope/isotope.pkgd.min.js"></script>
-<!-- Magnific Popup javascript -->
-<script type="text/javascript" src="/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
-<!-- Appear javascript -->
-<script type="text/javascript" src="/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
-<!-- Count To javascript -->
-<script type="text/javascript" src="/assets/plugins/jquery.countTo.js"></script>
-<!-- Parallax javascript -->
-<script src="/assets/plugins/jquery.parallax-1.1.3.js"></script>
-<!-- Contact form -->
-<script src="/assets/plugins/jquery.validate.js"></script>
-<!-- Morphext -->
-<script type="text/javascript" src="/assets/plugins/morphext/morphext.min.js"></script>
-<!-- Google Maps javascript -->
-<!-- Google Maps -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAsNNbnqvbIiRo2hBpr3-lvmYxm3ISPtWI"></script>
-
-
-<!-- Background Video -->
-<script src="/assets/plugins/vide/jquery.vide.js"></script>
-<!-- Owl carousel javascript -->
-<script type="text/javascript" src="/assets/plugins/owl-carousel/owl.carousel.js"></script>
-<!-- Pace javascript -->
-<script type="text/javascript" src="/assets/plugins/pace/pace.min.js"></script>
-<!-- SmoothScroll javascript -->
-<script type="text/javascript" src="/assets/plugins/jquery.browser.js"></script>
-<script type="text/javascript" src="/assets/plugins/SmoothScroll.js"></script>
-<!-- Initialization of Plugins -->
-<script type="text/javascript" src="/assets/js/template.js"></script>
-<!-- Custom Scripts -->
-<script type="text/javascript" src="/assets/js/custom.js"></script>
-@yield('scripts')
-</body>
-</html>

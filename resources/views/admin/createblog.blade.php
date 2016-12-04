@@ -2,7 +2,7 @@
 
 @section('scripts')
 <!-- Google Maps -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyA75bnzyJ_5j2Ger9Erjo1Q-0XucnZbst4"></script>
 <script type="text/javascript" src="/assets/js/maps.js"></script>
 @endsection
 
@@ -53,18 +53,6 @@
 						</div>
 						@if ($errors->has('subtitle')) <p class="alert alert-danger">{{ $errors->first('subtitle') }}</p> @endif
 
-
-						<div class="form-group">
-							<label for="region">Region</label>
-
-							<select name="region_id[]" id="region" class="form-control" multiple="">
-								@foreach ($regions as $region)
-								<option value="{{ $region->id }}">{{ $region->region }}</option>
-								@endforeach
-							</select>
-						</div>
-
-						@if ($errors->has('region_id')) <p class="alert alert-danger">{{ $errors->first('region_id') }}</p> @endif
 
 
 						<div class="form-group">

@@ -1,0 +1,57 @@
+@extends('layouts.single')
+@FrutiSmoothieMk
+@section('content')
+    <!-- blog -->
+    <div class="blog">
+        <!-- container -->
+        <div class="container">
+            <div class="col-md-8 blog-top-left-grid">
+                <div class="left-blog left-single">
+                    <div class="blog-left">
+                        <div class="single-left-left wow fadeInUp animated" data-wow-delay=".5s">
+                            <p> Почетна / <a href="#">{{ $service->title }}</a></p>
+                            <img src="/assets/img/services/{{ $service->image }}" alt="{{ $service->title }}"/>
+                        </div>
+			<div class="blog-left-bottom wow fadeInUp animated" data-wow-delay=".5s" style="min-height: 20px;">
+				<span class='st_facebook_large' displayText='Facebook'></span>
+				<span class='st_twitter_large' displayText='Tweet'></span>
+				<span class='st_linkedin_large' displayText='LinkedIn'></span>
+				<span class='st_pinterest_large' displayText='Pinterest'></span>
+				<span class='st_email_large' displayText='Email'></span>
+			</div>
+                        <div class="blog-left-bottom wow fadeInUp animated" data-wow-delay=".5s">
+                            {!! $service->description !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 blog-top-right-grid">
+                <div class="Categories">
+                    <h3 class="wow fadeInUp animated" data-wow-delay=".5s">Производи</h3>
+                    <ul>
+                        @foreach($categories as $category)
+                            <li class="wow fadeInUp animated" data-wow-delay=".5s"><a
+                                        href="/categories/{{ $category->slug }}/products">{{ $category->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="clearfix padding-help-1"></div>
+                <div class="Categories">
+                    <div class="fb-page" data-href="https://www.facebook.com/frutismoothie.mk/" data-tabs="timeline"
+                         data-width="350" data-small-header="false" data-adapt-container-width="true"
+                         data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/frutismoothie.mk/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/frutismoothie.mk/">Fruti Smoothie</a></blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //blog -->
+
+    @include('main.footer')
+@endsection
+
+

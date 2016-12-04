@@ -1,118 +1,75 @@
-@extends('layouts.main')
-@include('layouts.menu')
+@extends('layouts.single')
+
+@section('opengraph')
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Fruti Smoothie - {!! $staticpage->title !!}">
+    <meta itemprop="description" content="{!! str_limit(strip_tags($staticpage->description), 155) !!}">
+    <meta itemprop="image" content="http://frutismoothie.mk/assets/img/staticpage/{{ $staticpage->image }}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@FrutiSmoothie">
+    <meta name="twitter:title" content="Fruti Smoothie">
+    <meta name="twitter:description" content="{!!  str_limit(strip_tags($staticpage->description), 155) !!}">
+    <meta name="twitter:creator" content="@FrutiSmoothie">
+    <meta name="twitter:image" content="http://frutismoothie.mk/assets/img/staticpage/{{ $staticpage->image }}">
+
+    <!-- Open Graph data -->
+    <meta property="fb:app_id" content="332475717131384" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Fruti Smoothie" />
+    <meta property="og:url" content="{!! $path !!}" /> 
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://frutismoothie.mk/assets/img/staticpage/{{ $staticpage->image }}" />
+    <meta property="og:description" content="{!! str_limit(strip_tags($staticpage->description), 155) !!}" />
+    <meta property="og:site_name" content="Fruti Smoothie - {!! $staticpage->title !!}" />
+@endsection
+
 @section('content')
-
-    <!-- breadcrumb start -->
-    <!-- ================ -->
-    <div class="breadcrumb-container">
+    <!-- blog -->
+    <div class="blog">
+        <!-- container -->
         <div class="container">
-            <ol class="breadcrumb">
-                <li><i class="fa fa-home pr-10"></i><a href="index.html">Почетна</a></li>
-                <li class="active">{{ $staticpage->title }}</li>
-            </ol>
-        </div>
-    </div>
-    <!-- breadcrumb end -->
-
-
-    @if($staticpage->image)
-    <!-- banner start -->
-    <!-- ================ -->
-    <div class="pv-40 banner light-gray-bg">
-        <div class="container clearfix">
-
-            <!-- slideshow start -->
-            <!-- ================ -->
-            <div class="slideshow">
-
-                <!-- slider revolution start -->
-                <!-- ================ -->
-                <div class="slider-banner-container">
-                    <div class="slider-banner-boxedwidth-stopped">
-                        <ul class="slides">
-                            <!-- slide 1 start -->
-                            <!-- ================ -->
-                            <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="500" data-saveperformance="on" data-title="Slide 1">
-
-                                <!-- main image -->
-                                <img src="/assets/img/staticpage/{{$staticpage->image}}" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
-
-                                <!-- Transparent Background -->
-                                <div class="tp-caption dark-translucent-bg"
-                                     data-x="center"
-                                     data-y="bottom"
-                                     data-speed="600"
-                                     data-start="0">
-                                </div>
-
-                                <!-- LAYER NR. 1 -->
-                                <div class="tp-caption sfb fadeout text-center large_white"
-                                     data-x="center"
-                                     data-y="110"
-                                     data-speed="500"
-                                     data-start="1000"
-                                     data-easing="easeOutQuad">{{ $staticpage->title }}
-                                </div>
-
-                                <!-- LAYER NR. 2 -->
-                                <div class="tp-caption sfb fadeout text-center large_white tp-resizeme"
-                                     data-x="center"
-                                     data-y="155"
-                                     data-speed="500"
-                                     data-start="1300"
-                                     data-easing="easeOutQuad"><div class="separator light"></div>
-                                </div>
-
-                                <!-- LAYER NR. 3 -->
-                                <div class="tp-caption sfb fadeout medium_white text-center"
-                                     data-x="center"
-                                     data-y="190"
-                                     data-speed="500"
-                                     data-start="1300"
-                                     data-easing="easeOutQuad"
-                                     data-endspeed="600">
-                                </div>
-
-                            </li>
-                            <!-- slide 1 end -->
-
-
-                        </ul>
-                        <div class="tp-bannertimer"></div>
+            <div class="col-md-8 blog-top-left-grid">
+                <div class="left-blog left-single">
+                    <div class="blog-left">
+                        <div class="single-left-left wow fadeInUp animated" data-wow-delay=".5s">
+                            <p> Почетна / <a href="#">{{ $staticpage->title }}</a></p>
+                            <img src="/assets/img/staticpage/{{ $staticpage->image }}" alt="{{ $staticpage->title }}"/>
+                        </div>
+                        <div class="blog-left-bottom wow fadeInUp animated" data-wow-delay=".5s">
+                            {!! $staticpage->description !!}
+                        </div>
                     </div>
                 </div>
-                <!-- slider revolution end -->
-
             </div>
-            <!-- slideshow end -->
-
-        </div>
-    </div>
-    <!-- banner end -->
-    @endif
-
-    <!-- main-container start -->
-    <!-- ================ -->
-    <section class="main-container padding-ver-clear">
-        <div class="container pv-40">
-            <div class="row">
-
-                <!-- main start -->
-                <!-- ================ -->
-                <div class="main col-md-12">
-                    <h1 class="title">{{ $staticpage->title }}</h1>
-                    <div class="separator-2"></div>
-                    {!! $staticpage->description !!}
+            <div class="col-md-4 blog-top-right-grid">
+                <div class="Categories">
+                    <h3 class="wow fadeInUp animated" data-wow-delay=".5s">Производи</h3>
+                    <ul>
+                        @foreach($categories as $category)
+                            <li class="wow fadeInUp animated" data-wow-delay=".5s"><a
+                                        href="/categories/{{ $category->slug }}/products">{{ $category->name }}</a></li>
+                        @endforeach
+                    </ul>
                 </div>
-                <!-- main end -->
-
-
+                <div class="clearfix padding-help-1"></div>
+                <div class="Categories">
+                    <div class="fb-page" data-href="https://www.facebook.com/frutismoothie.mk/" data-tabs="timeline"
+                         data-width="350" data-small-header="false" data-adapt-container-width="true"
+                         data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/frutismoothie.mk/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/frutismoothie.mk/">Fruti Smoothie</a></blockquote>
+                    </div>
+                </div>
             </div>
+            <div class="clearfix"></div>
         </div>
-    </section>
-    <!-- main-container end -->
+        <!-- //container -->
+    </div>
+    <!-- //blog -->
 
-
-
+    @include('main.footer')
 @endsection
+
 

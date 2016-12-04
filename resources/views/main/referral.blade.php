@@ -1,5 +1,30 @@
 @extends('layouts.main')
 @include('layouts.menu')
+@section('opengraph')
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Fruti Smoothie - {!! $refferal->title !!}">
+    <meta itemprop="description" content="{!! str_limit(strip_tags($refferal->description), 155) !!}">
+    <meta itemprop="image" content="http://frutismoothie.mk/assets/img/refferal/{{ $refferal->image }}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@FrutiSmoothie">
+    <meta name="twitter:title" content="Fruti Smoothie">
+    <meta name="twitter:description" content="{!!  str_limit(strip_tags($refferal->description), 155) !!}">
+    <meta name="twitter:creator" content="@FrutiSmoothie">
+    <meta name="twitter:image" content="http://frutismoothie.mk/assets/img/refferal/{{ $refferal->image }}">
+
+    <!-- Open Graph data -->
+    <meta property="fb:app_id" content="332475717131384" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Fruti Smoothie" />
+    <meta property="og:url" content="{!! $path !!}" /> 
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://frutismoothie.mk/assets/img/refferal/{{ $refferal->image }}" />
+    <meta property="og:description" content="{!! str_limit(strip_tags($refferal->description), 155) !!}" />
+    <meta property="og:site_name" content="Fruti Smoothie - {!! $refferal->title !!}" />
+@endsection
+
 @section('content')
 
     <!-- breadcrumb start -->
